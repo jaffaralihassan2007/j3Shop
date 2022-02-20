@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="m-5"></div>
+
+    <div class="container">
+      <div class="row">
+    {% for cards in DB %}
+          <div class="col-lg-4 card" style="margin-bottom: 5px;">
+                <a href="{% url 'product' cards.id %}"><img src="{{ cards.image.url }}" class="card-img-top"></a>
+                <div class="card-body">
+                  <h5 class="card-title">{{cards.name}}</h5>
+                  <p class="card-text">{{cards.Describe}}</p>
+                  <h6 class="text-warning">{{cards.price}} <span class="text-danger">BD</span></h6>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>   
+    {% endfor %}
+      </div>
+    </div>
+    
+{% endblock content %}

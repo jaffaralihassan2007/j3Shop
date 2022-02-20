@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="m-5"></div>
+
+    <div class="container">
+        {% if id%}
+            {% for prod in DB %}
+            <img src="{{ prod.image.url }}" class="" style="width: 200px; height: 200px;" alt="...">
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+{% endblock content %}
